@@ -79,6 +79,26 @@ public class LPCommand implements CommandExecutor {
 				return true;
 			} // end of command argument
 			
+			if (args[0].equalsIgnoreCase("set")) {
+				if (sender.hasPermission("loyaltypoints.set")) {
+					if (!(args.length == 3)) {
+						sender.sendMessage(ChatColor.RED + "/lp set [username] [amount]");
+						return true;
+					}
+					try {
+						int amount = Integer.parseInt(args[2]);
+						if (!plugin.loyaltyMap.containsKey(args[1])) {
+							sender.sendMessage(ChatColor.RED + "Player not found.");
+							return true;
+						}
+						plugin.loyaltyMap.put(args[1], amount);
+						return true;
+					} catch (NumberFormatException e) {
+						sender.sendMessage(ChatColor.RED + "Number expected after /lp delete [username]");
+					}
+				}
+			}
+			
 			if (args[0].equalsIgnoreCase("version")) {
 				if (sender.hasPermission("loyaltypoints.version")) {
 					sender.sendMessage(plugin.pluginTag +ChatColor.WHITE+ " version " + plugin.getDescription().getVersion());

@@ -95,7 +95,7 @@ public class LoyaltyPoints extends JavaPlugin {
 		File actual = new File(getDataFolder(), name);
 		if (!actual.exists()) {
 			getDataFolder().mkdir();
-			InputStream input = this.getClass().getResourceAsStream("/resources/config.yml");
+			InputStream input = this.getClass().getResourceAsStream("/defaults/config.yml");
 			if (input != null) {
 				FileOutputStream output = null;
 				

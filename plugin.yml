@@ -1,6 +1,6 @@
 name: LoyaltyPoints
 main: me.menexia.loyaltypoints.LoyaltyPoints
-version: 1.0
+version: 1.1
 commands:
     lp:
         description: LoyaltyPoints base command.
@@ -25,6 +25,9 @@ permissions:
     loyaltypoints.reload:
         description: Allows player to reload the config.
         default: op
+    loyaltypoints.set:
+        description: Allows player to set a user's LoyaltyPoints
+        default: op
     loyaltypoints.user:
         description: Permissions package of LoyaltyPoints that is essential for a normal user.
         children:
@@ -39,4 +42,5 @@ permissions:
             loyaltypoints.check.other: true
             loyaltypoints.version: true
             loyaltypoints.reload: true
+            loyaltypoints.user: true
         default: false
