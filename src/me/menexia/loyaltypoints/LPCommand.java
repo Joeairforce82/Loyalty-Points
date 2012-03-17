@@ -108,8 +108,10 @@ public class LPCommand implements CommandExecutor {
 			
 			if (args[0].equalsIgnoreCase("reload")) {
 				if (sender.hasPermission("loyaltypoints.reload")) {
+					LPFileManager.save();
+					plugin.loadPointsData();
 					plugin.loadVariables();
-					sender.sendMessage(plugin.pluginTag +ChatColor.WHITE+ " reloaded configuration.");
+					sender.sendMessage(plugin.pluginTag +ChatColor.WHITE+ " reloaded points data & configuration.");
 					return true;
 				}
 			}
@@ -142,4 +144,15 @@ class PointsComparator implements Comparator<User> {
 	public int compare(User a, User b) {
 		return (b.points - a.points);
 	}
+}
+
+class User {
+	public String name;
+	public int points;
+	
+	public User(String name, int points) {
+		this.name = name;
+		this.points = points;
+	}
+
 }

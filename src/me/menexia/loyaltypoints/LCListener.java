@@ -12,8 +12,8 @@ public class LCListener implements Listener {
 	}
 	
 	@EventHandler(ignoreCancelled = true, priority = EventPriority.LOWEST)
-	public void Ck4d1sxIfxD13vk(final PlayerJoinEvent event) {
-		plugin.kickStart(event.getPlayer().getName());
+	public void Velociraptor(final PlayerJoinEvent event) {
+			plugin.kickStart(event.getPlayer().getName());
 	}
 
 }

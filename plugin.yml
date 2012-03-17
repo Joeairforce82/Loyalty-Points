@@ -1,6 +1,6 @@
 name: LoyaltyPoints
 main: me.menexia.loyaltypoints.LoyaltyPoints
-version: 1.1
+version: 1.2
 commands:
     lp:
         description: LoyaltyPoints base command.
@@ -42,5 +42,5 @@ permissions:
             loyaltypoints.check.other: true
             loyaltypoints.version: true
             loyaltypoints.reload: true
-            loyaltypoints.user: true
+            loyaltypoints.set: true
         default: false

@@ -19,8 +19,7 @@ public class LPFileManager {
 			a.loyaltyMap.put(playerName, points);
 			return true;
 		} else { // must be a new guy!
-			a.loyaltyMap.put(playerName, a.startingPoints);
-		return true;
+			return false;
 		}
 	}
 
@@ -41,8 +40,8 @@ public class LPFileManager {
 	}
 
 	public static YamlConfiguration loadList() {
-		YamlConfiguration radList = YamlConfiguration.loadConfiguration(a.mapFile);
-		return radList;
+		YamlConfiguration cyril = YamlConfiguration.loadConfiguration(a.mapFile);
+		return cyril;
 	}
 
 }
